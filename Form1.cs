@@ -1,4 +1,6 @@
-﻿using System;
+﻿//v1.0.0:拡張子/拡張子集合ごとのファイル移動が可能．ファイルネームの完全一致，部分一致機能を備える．
+//v1.0.1:変な英語を修正．完全一致，部分一致は部分一致のみで表現可能なので，ファイルネームの完全一致，部分一致機能を廃止．
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,9 +40,6 @@ namespace FolderClassification
             cboxExtension .Enabled = false;
 
             txtboxFileName.Enabled = false;
-
-            rdbPerfect    .Enabled = false;
-            rdbPartial    .Enabled = false;
 
             rdbFileTypeOption .CheckedChanged += rdbCheckChanged;
             rdbExtensionOption.CheckedChanged += rdbCheckChanged;
@@ -98,14 +97,10 @@ namespace FolderClassification
         {
             if (chkboxFileName.Checked)
             {
-                rdbPerfect    .Enabled = true;
-                rdbPartial    .Enabled = true;
                 txtboxFileName.Enabled = true;
             }
             else
             {
-                rdbPerfect    .Enabled = false;
-                rdbPartial    .Enabled = false;
                 txtboxFileName.Enabled = false;
             }
         }
@@ -212,13 +207,8 @@ namespace FolderClassification
                     else if (rdbExtensionOption.Checked)
                         files = files.Where(filename => filename.ToLower().EndsWith(selected_extension));
 
-                    if (chkboxFileName     .Checked && txtboxFileName.Text != "")
-                    {
-                        if      (rdbPerfect.Checked)
-                            files = files.Where(filename => filename == (selected_path + "\\" + txtboxFileName.Text));
-                        else if (rdbPartial.Checked)
-                            files = files.Where(filename => filename.Contains(txtboxFileName.Text));
-                    }
+                    if      (chkboxFileName    .Checked && txtboxFileName.Text != "")
+                        files = files.Where(filename => filename.Contains(txtboxFileName.Text));
 
                     foreach (var f in files)
                     {

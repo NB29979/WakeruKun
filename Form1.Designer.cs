@@ -39,17 +39,15 @@
             this.fldOptions = new System.Windows.Forms.GroupBox();
             this.btnSearch = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.rdbPartial = new System.Windows.Forms.RadioButton();
-            this.rdbPerfect = new System.Windows.Forms.RadioButton();
             this.chkboxFileName = new System.Windows.Forms.CheckBox();
             this.txtboxFileName = new System.Windows.Forms.TextBox();
             this.rdbOther = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnMove = new System.Windows.Forms.Button();
             this.lblDestinationPath = new System.Windows.Forms.Label();
             this.btnDestinationFolder = new System.Windows.Forms.Button();
-            this.btnMove = new System.Windows.Forms.Button();
             this.fldOptions.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -152,7 +150,7 @@
             this.fldOptions.Size = new System.Drawing.Size(558, 100);
             this.fldOptions.TabIndex = 9;
             this.fldOptions.TabStop = false;
-            this.fldOptions.Text = "2. Select Options And Search";
+            this.fldOptions.Text = "2. Select options and search folder";
             // 
             // btnSearch
             // 
@@ -165,8 +163,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.rdbPartial);
-            this.groupBox4.Controls.Add(this.rdbPerfect);
             this.groupBox4.Controls.Add(this.chkboxFileName);
             this.groupBox4.Controls.Add(this.txtboxFileName);
             this.groupBox4.Location = new System.Drawing.Point(6, 43);
@@ -175,29 +171,6 @@
             this.groupBox4.TabIndex = 16;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Option";
-            // 
-            // rdbPartial
-            // 
-            this.rdbPartial.AutoSize = true;
-            this.rdbPartial.Checked = true;
-            this.rdbPartial.Location = new System.Drawing.Point(193, 17);
-            this.rdbPartial.Name = "rdbPartial";
-            this.rdbPartial.Size = new System.Drawing.Size(56, 16);
-            this.rdbPartial.TabIndex = 14;
-            this.rdbPartial.TabStop = true;
-            this.rdbPartial.Text = "Partial";
-            this.rdbPartial.UseVisualStyleBackColor = true;
-            // 
-            // rdbPerfect
-            // 
-            this.rdbPerfect.AutoSize = true;
-            this.rdbPerfect.Location = new System.Drawing.Point(128, 17);
-            this.rdbPerfect.Name = "rdbPerfect";
-            this.rdbPerfect.Size = new System.Drawing.Size(60, 16);
-            this.rdbPerfect.TabIndex = 13;
-            this.rdbPerfect.TabStop = true;
-            this.rdbPerfect.Text = "Perfect";
-            this.rdbPerfect.UseVisualStyleBackColor = true;
             // 
             // chkboxFileName
             // 
@@ -212,9 +185,9 @@
             // 
             // txtboxFileName
             // 
-            this.txtboxFileName.Location = new System.Drawing.Point(255, 16);
+            this.txtboxFileName.Location = new System.Drawing.Point(128, 16);
             this.txtboxFileName.Name = "txtboxFileName";
-            this.txtboxFileName.Size = new System.Drawing.Size(169, 19);
+            this.txtboxFileName.Size = new System.Drawing.Size(296, 19);
             this.txtboxFileName.TabIndex = 12;
             // 
             // rdbOther
@@ -237,7 +210,7 @@
             this.groupBox1.Size = new System.Drawing.Size(558, 54);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "1. Select Folder";
+            this.groupBox1.Text = "1. Select folder";
             // 
             // groupBox2
             // 
@@ -259,7 +232,17 @@
             this.groupBox3.Size = new System.Drawing.Size(558, 53);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "3. Select Destination Folder And Move";
+            this.groupBox3.Text = "3. Select destination folder and move the selected files";
+            // 
+            // btnMove
+            // 
+            this.btnMove.Location = new System.Drawing.Point(459, 18);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(93, 23);
+            this.btnMove.TabIndex = 0;
+            this.btnMove.Text = "Move!!";
+            this.btnMove.UseVisualStyleBackColor = true;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // lblDestinationPath
             // 
@@ -278,16 +261,6 @@
             this.btnDestinationFolder.Text = "SelectFolder";
             this.btnDestinationFolder.UseVisualStyleBackColor = true;
             this.btnDestinationFolder.Click += new System.EventHandler(this.btnDestinationFolder_Click);
-            // 
-            // btnMove
-            // 
-            this.btnMove.Location = new System.Drawing.Point(459, 18);
-            this.btnMove.Name = "btnMove";
-            this.btnMove.Size = new System.Drawing.Size(93, 23);
-            this.btnMove.TabIndex = 0;
-            this.btnMove.Text = "Move!!";
-            this.btnMove.UseVisualStyleBackColor = true;
-            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // Form1
             // 
@@ -333,8 +306,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox txtboxFileName;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.RadioButton rdbPartial;
-        private System.Windows.Forms.RadioButton rdbPerfect;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblDestinationPath;
